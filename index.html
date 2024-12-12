@@ -25,7 +25,7 @@
       margin: 20px 0;
     }
     img {
-      width: 200px; /* Установите фиксированную ширину */
+      width: 200px; /* Фиксированная ширина */
       height: auto; /* Сохранение пропорций */
       border-radius: 10px;
     }
@@ -39,9 +39,41 @@
 <body>
   <div class="container">
     <div class="image-wrapper">
-      <img src="star-animation.gif" alt="Анимация звезд">
+      <img id="dynamic-gif" src="" alt="Анимация звезд">
     </div>
     <div class="message">Звезды успешно куплены!<br>Они скоро появятся на вашем балансе.</div>
   </div>
+
+  <script>
+    // Функция для определения текущего интервала времени
+    function getGifBasedOnTime() {
+      const currentHour = new Date().getHours();
+      let gifPath = "";
+
+      // Интервалы времени:
+      // Утро: 00:00 - 05:59
+      if (currentHour >= 0 && currentHour < 6) {
+        gifPath = "star-animation.gif"; // Путь к GIF для утра
+      } 
+      // День: 06:00 - 11:59
+      else if (currentHour >= 6 && currentHour < 12) {
+        gifPath = "star-animation2.gif"; // Путь к GIF для дня
+      } 
+      // Вечер: 12:00 - 17:59
+      else if (currentHour >= 12 && currentHour < 18) {
+        gifPath = "star-animation3.gif"; // Путь к GIF для вечера
+      } 
+      // Ночь: 18:00 - 23:59
+      else if (currentHour >= 18 && currentHour <= 23) {
+        gifPath = "star-animation4.gif"; // Путь к GIF для ночи
+      }
+
+      return gifPath;
+    }
+
+    // Установить GIF в зависимости от времени
+    const gifElement = document.getElementById("dynamic-gif");
+    gifElement.src = getGifBasedOnTime();
+  </script>
 </body>
 </html>
