@@ -14,6 +14,8 @@
       margin: 0;
       font-family: Arial, sans-serif;
       text-align: center;
+      background-color: #ffffff; /* Установлен белый фон */
+      color: #000000; /* Установлен черный цвет текста */
     }
     .container {
       max-width: 400px;
@@ -32,18 +34,6 @@
       font-weight: bold;
       margin: 10px 0;
     }
-    .button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .button:hover {
-      background-color: #0056b3;
-    }
   </style>
 </head>
 <body>
@@ -51,14 +41,7 @@
     <div class="image-wrapper">
       <img src="star-animation.gif" alt="Анимация звезд">
     </div>
-    <div class="message">Звезды успешно куплены!<br>Они скоро появятся на вашем балансе.</div>
-    <button class="button" onclick="closeWindow()">Закрыть</button>
+    <div class="message">100 звезд успешно куплено!<br>Звезды скоро появятся на вашем балансе.</div>
   </div>
-
-  <script>
-    function closeWindow() {
-      window.close();
-    }
-  </script>
 </body>
 </html>
